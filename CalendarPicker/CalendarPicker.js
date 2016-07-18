@@ -87,7 +87,7 @@ var Day = React.createClass({
             </Text>
           </View>
         );
-      } 
+      }
       else {
         return (
           <View style={styles.dayWrapper}>
@@ -375,8 +375,14 @@ var CalendarPicker = React.createClass({
     startFromMonday: React.PropTypes.bool,
     weekdays: React.PropTypes.array,
     months: React.PropTypes.array,
-    previousTitle: React.PropTypes.string,
-    nextTitle: React.PropTypes.string,
+    previousTitle: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.object
+    ]),
+    nextTitle: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.object
+    ]),
     selectedDayColor: React.PropTypes.string,
     selectedDayTextColor: React.PropTypes.string,
     scaleFactor: React.PropTypes.number,
